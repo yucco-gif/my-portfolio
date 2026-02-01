@@ -106,3 +106,98 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+:root {
+    --bg-color: #ECF0F1;
+    --text-color: #2C3E50;
+    --accent-color: #E74C3C;
+    --card-bg: #FFFFFF;
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1A252F;
+    --text-color: #ECF0F1;
+    --card-bg: #2C3E50;
+}
+
+* { margin: 0; padding: 0; box-word: border-box; }
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+/* Layout */
+.section { padding: 100px 10%; max-width: 1200px; margin: 0 auto; }
+.section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; position: relative; }
+.section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent-color); margin: 10px auto; }
+
+/* Navbar */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5%; position: fixed; width: 90%; top: 0; z-index: 1000;
+    background: var(--bg-color); opacity: 0.95;
+}
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; color: var(--text-color); font-weight: bold; }
+
+/* Hero */
+.hero {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(rgba(44,62,80,0.7), rgba(44,62,80,0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600') center/cover;
+    color: white; text-align: center;
+}
+.hero h1 { font-size: 4rem; margin-bottom: 20px; }
+
+/* Buttons */
+.btn { padding: 12px 30px; border-radius: 5px; text-decoration: none; display: inline-block; transition: var(--transition); border: none; cursor: pointer; }
+.btn-primary { background: var(--accent-color); color: white; }
+.btn-secondary { background: transparent; border: 2px solid white; color: white; margin-left: 10px; }
+.btn:hover { opacity: 0.8; transform: translateY(-3px); }
+
+/* Components */
+.skills-grid, .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.skill-card, .work-item { background: var(--card-bg); padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.profile-img { width: 200px; height: 200px; border-radius: 50%; background: #ddd; margin: 0 auto 30px; }
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto; }
+.contact-form input, .contact-form textarea { padding: 15px; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
+
+/* Animation */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .nav-links { display: none; }
+}
+
+
+
+// ダークモード切り替え
+const themeToggle = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    htmlElement.setAttribute('data-theme', newTheme);
+});
+
+// スクロールアニメーション (Reveal effect)
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
