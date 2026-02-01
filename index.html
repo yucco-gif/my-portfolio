@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamada Taro | Web Design Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">YT Design</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="テーマ切り替え">🌓</button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <h1>Colors Logic,<br>Designs Magic.</h1>
+            <p>色彩検定1級の知識と確かなコーディング技術で、企業の想いを「伝わる」形に。</p>
+            <div class="cta-group">
+                <a href="#works" class="btn btn-primary">実績を見る</a>
+                <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section reveal">
+        <h2 class="section-title">Who I Am</h2>
+        <div class="about-container">
+            <div class="profile-img"></div>
+            <div class="about-text">
+                <h3>山田太郎 / Web Designer</h3>
+                <p>制作会社で3年勤務後、現在はフリーランスとして活動中。色彩心理学に基づいた戦略的な配色が得意です。</p>
+                <p><strong>強み:</strong> 「信頼感の青」「購買意欲の赤」など、ビジネス課題を解決する色使いを提供します。</p>
+                <p><strong>趣味:</strong> 看板の配色分析、カフェ巡り。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section reveal">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Design</h3>
+                <ul>
+                    <li>Figma / Adobe XD</li>
+                    <li>Photoshop / Illustrator</li>
+                    <li>色彩検定1級 (AFT認定)</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Development</h3>
+                <ul>
+                    <li>HTML5 / CSS3 (SCSS)</li>
+                    <li>JavaScript (Vanilla JS)</li>
+                    <li>WordPress</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="section reveal">
+        <h2 class="section-title">Selected Works</h2>
+        <div class="works-grid">
+            <div class="work-item">
+                <div class="work-thumb"></div>
+                <h4>株式会社テックスタイル</h4>
+                <p>コーポレートサイト：問い合わせ120%増</p>
+            </div>
+            <div class="work-item">
+                <div class="work-thumb"></div>
+                <h4>美容液「Lumiere」</h4>
+                <p>LP：FV離脱率の劇的改善</p>
+            </div>
+            <div class="work-item">
+                <div class="work-thumb"></div>
+                <h4>Sun & Beans</h4>
+                <p>カフェ：シズル感ある店舗サイト</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section reveal">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-lead">制作のご依頼・ご相談は、2営業日以内に返信いたします。</p>
+        <form class="contact-form">
+            <input type="text" placeholder="お名前" required>
+            <input type="email" placeholder="メールアドレス" required>
+            <textarea placeholder="お問い合わせ内容" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary">送信する</button>
+        </form>
+        <div class="sns-links">
+            <a href="#">X (Twitter)</a> / <a href="#">Instagram</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 YT Design All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
