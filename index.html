@@ -1,203 +1,190 @@
-<!DOCTYPE html>
-<html lang="ja" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yamada Taro | Web Design Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+コンテンツにスキップ
+ユッコgif
+私のポートフォリオ
+リポジトリナビゲーション
+コード
+問題
+プルリクエスト
+アクション
+プロジェクト
+1
+ （1 ）
+ウィキ
+安全
+洞察
+設定
+私のポートフォリオ
+/
+index.html
+で
+主要
+
+編集
+
+プレビュー
+インデントモード
+
+スペース
+インデントサイズ
+
+2
+行折り返しモード
+
+ラップなし
+index.htmlファイルの内容を編集する
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+
+            .about-img img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">YT Design</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="theme-toggle" aria-label="テーマ切り替え">🌓</button>
-    </nav>
 
-    <header class="hero">
-        <div class="hero-content fade-in">
-            <h1>Colors Logic,<br>Designs Magic.</h1>
-            <p>色彩検定1級の知識と確かなコーディング技術で、企業の想いを「伝わる」形に。</p>
-            <div class="cta-group">
-                <a href="#works" class="btn btn-primary">実績を見る</a>
-                <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">YAMADA.DESIGN</div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                    <li><a href="#works" onclick="toggleMenu()">Works</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center;">
+                <div class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="hamburger" onclick="toggleMenu()" style="margin-left: 20px;">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
 
-    <section id="about" class="section reveal">
-        <h2 class="section-title">Who I Am</h2>
-        <div class="about-container">
-            <div class="profile-img"></div>
-            <div class="about-text">
-                <h3>山田太郎 / Web Designer</h3>
-                <p>制作会社で3年勤務後、現在はフリーランスとして活動中。色彩心理学に基づいた戦略的な配色が得意です。</p>
-                <p><strong>強み:</strong> 「信頼感の青」「購買意欲の赤」など、ビジネス課題を解決する色使いを提供します。</p>
-                <p><strong>趣味:</strong> 看板の配色分析、カフェ巡り。</p>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content fade-in">
+            <h1>Colors Logic,<br>Designs Magic.</h1>
+            <p>色彩検定1級の知識と確かなコーディング技術で、企業の想いを「伝わる」形に。<br>CVR向上に貢献するWebデザインを提供します。</p>
+            <div class="hero-buttons">
+                <a href="#works" class="btn btn-primary">実績を見る</a>
+                <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section reveal">
-        <h2 class="section-title">My Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Design</h3>
-                <ul>
-                    <li>Figma / Adobe XD</li>
-                    <li>Photoshop / Illustrator</li>
-                    <li>色彩検定1級 (AFT認定)</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <h3>Development</h3>
-                <ul>
-                    <li>HTML5 / CSS3 (SCSS)</li>
-                    <li>JavaScript (Vanilla JS)</li>
-                    <li>WordPress</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="works" class="section reveal">
-        <h2 class="section-title">Selected Works</h2>
-        <div class="works-grid">
-            <div class="work-item">
-                <div class="work-thumb"></div>
-                <h4>株式会社テックスタイル</h4>
-                <p>コーポレートサイト：問い合わせ120%増</p>
-            </div>
-            <div class="work-item">
-                <div class="work-thumb"></div>
-                <h4>美容液「Lumiere」</h4>
-                <p>LP：FV離脱率の劇的改善</p>
-            </div>
-            <div class="work-item">
-                <div class="work-thumb"></div>
-                <h4>Sun & Beans</h4>
-                <p>カフェ：シズル感ある店舗サイト</p>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title fade-in">Who I Am</div>
+            <div class="about-grid">
+                <div class="about-img fade-in">
+                    <!-- Placeholder for profile image -->
+                    <img src="https://ui-avatars.com/api/?name=Yamada+Taro&background=2C3E50&color=fff&size=300" alt="プロフィール画像">
+                </div>
+                <div class="about-text fade-in">
+                    <h3>Web Designer / Yamada Taro</h3>
+                    <p>はじめまして、Webデザイナーの山田太郎です。<br>
+                    都内の制作会社で3年間、企業のコーポレートサイトや商品LPの制作に従事し、現在はフリーランスとして活動しています。</p>
+                    
+                    <div class="strong-point">
+                        <strong><i class="fas fa-lightbulb"></i> 強み：色彩心理学に基づいたデザイン</strong>
+                        <p style="margin-top: 10px; font-size: 0.95rem;">
+                            ただ綺麗なだけでなく、「信頼感を与える青」「購買意欲をそそる赤」など、目的に合わせた色使いでビジネスの課題解決をサポートします。
+                        </p>
+                    </div>
+                    
+                    <p style="margin-top: 20px; font-size: 0.9rem;">
+                        <i class="fas fa-heart" style="color: var(--accent);"></i> 趣味: 街中の看板の配色分析、カフェ巡り。
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section reveal">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="contact-lead">制作のご依頼・ご相談は、2営業日以内に返信いたします。</p>
-        <form class="contact-form">
-            <input type="text" placeholder="お名前" required>
-            <input type="email" placeholder="メールアドレス" required>
-            <textarea placeholder="お問い合わせ内容" rows="5" required></textarea>
-            <button type="submit" class="btn btn-primary">送信する</button>
-        </form>
-        <div class="sns-links">
-            <a href="#">X (Twitter)</a> / <a href="#">Instagram</a>
-        </div>
-    </section>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
 
-    <footer>
-        <p>&copy; 2026 YT Design All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-
-:root {
-    --bg-color: #ECF0F1;
-    --text-color: #2C3E50;
-    --accent-color: #E74C3C;
-    --card-bg: #FFFFFF;
-    --transition: all 0.3s ease;
-}
-
-[data-theme="dark"] {
-    --bg-color: #1A252F;
-    --text-color: #ECF0F1;
-    --card-bg: #2C3E50;
-}
-
-* { margin: 0; padding: 0; box-word: border-box; }
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    transition: var(--transition);
-}
-
-/* Layout */
-.section { padding: 100px 10%; max-width: 1200px; margin: 0 auto; }
-.section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; position: relative; }
-.section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent-color); margin: 10px auto; }
-
-/* Navbar */
-.navbar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 5%; position: fixed; width: 90%; top: 0; z-index: 1000;
-    background: var(--bg-color); opacity: 0.95;
-}
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { text-decoration: none; color: var(--text-color); font-weight: bold; }
-
-/* Hero */
-.hero {
-    height: 100vh; display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(rgba(44,62,80,0.7), rgba(44,62,80,0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600') center/cover;
-    color: white; text-align: center;
-}
-.hero h1 { font-size: 4rem; margin-bottom: 20px; }
-
-/* Buttons */
-.btn { padding: 12px 30px; border-radius: 5px; text-decoration: none; display: inline-block; transition: var(--transition); border: none; cursor: pointer; }
-.btn-primary { background: var(--accent-color); color: white; }
-.btn-secondary { background: transparent; border: 2px solid white; color: white; margin-left: 10px; }
-.btn:hover { opacity: 0.8; transform: translateY(-3px); }
-
-/* Components */
-.skills-grid, .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.skill-card, .work-item { background: var(--card-bg); padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.profile-img { width: 200px; height: 200px; border-radius: 50%; background: #ddd; margin: 0 auto 30px; }
-
-/* Form */
-.contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto; }
-.contact-form input, .contact-form textarea { padding: 15px; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
-
-/* Animation */
-.reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
-.reveal.active { opacity: 1; transform: translateY(0); }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .nav-links { display: none; }
-}
-
-
-
-// ダークモード切り替え
-const themeToggle = document.getElementById('theme-toggle');
-const htmlElement = document.documentElement;
-
-themeToggle.addEventListener('click', () => {
-    const currentTheme = htmlElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    htmlElement.setAttribute('data-theme', newTheme);
-});
-
-// スクロールアニメーション (Reveal effect)
-const observerOptions = { threshold: 0.1 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+キーを移動させるフォーカスControl + Shift + mを切り替えるには、このキーを使用します。または、ページ上の次のインタラクティブ要素に移動するには、このキーを使用します。tabesctab
